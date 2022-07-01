@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_030556) do
+ActiveRecord::Schema.define(version: 2022_07_01_032335) do
 
   create_table "groups", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "schedules", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "start_date_and_time", null: false
+    t.datetime "end_date_and_time", null: false
+    t.string "place"
+    t.text "memo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
