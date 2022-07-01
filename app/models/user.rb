@@ -8,5 +8,7 @@ class User < ApplicationRecord
   validates :can_edit, inclusion: { in: [true, false] }
 
   has_many :user_groups
+  has_many :user_schedules
   has_many :groups, through: :user_groups
+  has_many :schedules, through: :user_schedules
 end
