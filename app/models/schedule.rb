@@ -7,4 +7,6 @@ class Schedule < ApplicationRecord
 
   has_many :user_schedules
   has_many :users, through: :user_schedules
+  has_many :group_schedules
+  has_many :groups, through: :group_schedules
 end
