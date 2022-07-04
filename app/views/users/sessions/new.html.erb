@@ -1,0 +1,13 @@
+<h2>Log in</h2>
+
+<%= form_with model: resource, url: user_session_path, method: :POST, local: true do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+
+  <%= f.label "メールアドレス" %>
+  <%= f.email_field :email, placeholder: "sample@sample.com" %>
+
+  <%= f.label "パスワード" %>
+  <%= f.password_field :password, placeholder: "英数字6文字以上のパスワード" %>
+
+  <%= f.submit "サインイン"%>
+<% end %>

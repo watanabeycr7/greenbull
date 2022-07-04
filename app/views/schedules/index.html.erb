@@ -1,0 +1,12 @@
+schedules index
+
+
+<% if user_signed_in? %>
+  <p>ようこそ、<%= @user.name %>さん</p>
+  <p><%= link_to 'マイページ', user_path(:id) %></p>
+  <p><%= link_to '利用者一覧', users_path %></p>
+  <p><%= link_to 'ログアウト', destroy_user_session_path, method: :DELETE %></p>
+<% else %>
+  <p><%= link_to 'ユーザー新規登録', new_user_registration_path %></p>
+  <p><%= link_to 'ログイン', new_user_session_path %></p>
+<% end %>
