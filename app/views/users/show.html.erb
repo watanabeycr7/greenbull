@@ -1,2 +1,19 @@
 <h1>Users#show</h1>
 <p><%= @user.name %>さんのユーザーページ</p>
+
+<table border = 1>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <th>所属グループ</th>
+    <td>
+      <% @user.groups.each do |g| %>
+        <%= g.name %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+
+<p><%= link_to '編集', edit_user_path(@user.id) %></p>
