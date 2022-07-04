@@ -1,0 +1,10 @@
+<h1>Users#index</h1>
+
+<% @ordinaly_users.each do |o| %>
+  <p>
+    <%= link_to o.name, user_path(o.id) %>
+    <% o.groups.each do |g| %>
+      <%= g.name %>
+    <% end %>
+  </p>
+<% end %>
