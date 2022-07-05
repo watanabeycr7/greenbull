@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def index
 
@@ -22,12 +22,29 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
+  end
+
+  def update
+    #まずユーザーを更新
+    @user.update(user_params)
+    #ユーザーがもつグループ情報を一旦すべて削除
+    @user.user_groups.destroy_all
+    #group_idを登録して保存
+    @user.user_groups.create(user_group_params)
+    redirect_to user_path(params[:id])
   end
 
   private
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+
+  def user_group_params
+    params.require(:user).require(:user_groups).permit(:group_id)
   end
 end

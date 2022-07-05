@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   root to: 'schedules#index'
-  resources :users, only: [:index, :show, :edit]
+  resources :users, only: [:index, :show, :edit, :update]
 end
