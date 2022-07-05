@@ -36,5 +36,6 @@
   <p>
     <%= f.submit '登録' %>
   </p>
-
 <% end %>
+
+<p><%= link_to '削除', schedule_path(@schedule.id), method: :DELETE %></p>

@@ -5,8 +5,8 @@ class Schedule < ApplicationRecord
     validates :end_date_and_time
   end
 
-  has_many :user_schedules
+  has_many :user_schedules, dependent: :destroy
   has_many :users, through: :user_schedules
-  has_many :group_schedules
+  has_many :group_schedules, dependent: :destroy
   has_many :groups, through: :group_schedules
 end

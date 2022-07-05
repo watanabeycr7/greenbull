@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:show, :edit, :update]
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   before_action :set_users, only: [:new, :edit]
 
   def index
@@ -38,6 +38,11 @@ class SchedulesController < ApplicationController
       @schedule.user_schedules.create(user_id: p)
     end
     redirect_to schedule_path(params[:id])
+  end
+
+  def destroy
+    @schedule.destroy
+    redirect_to root_path
   end
 
   private
