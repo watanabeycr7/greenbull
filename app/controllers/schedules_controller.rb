@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:show, :edit]
 
   def index
     @user = current_user
@@ -25,6 +26,12 @@ class SchedulesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
+  def edit
+  end
+
 
   private
 
@@ -34,5 +41,9 @@ class SchedulesController < ApplicationController
 
   def user_schedules_params
     params.require(:schedule).require(:user_schedules).permit(user_ids: [])
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
   end
 end
