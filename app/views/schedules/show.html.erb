@@ -1,0 +1,24 @@
+<h1>schedules # show</h1>
+
+<p>
+予定名：<%= @schedule.name %>
+</p>
+<p>
+開始日時：<%= @schedule.start_date_and_time %>
+</p>
+<p>
+終了日時：<%= @schedule.end_date_and_time %>
+</p>
+<p>
+参加者：
+<% @schedule.users.each do |u| %>
+  <%= u.name %>
+<% end %>
+</p>
+<p>
+場所：<%= @schedule.place %>
+</p>
+<p>
+メモ：<%= @schedule.memo %>
+</p>
+<p><%= link_to '編集する', edit_schedule_path(@schedule.id) %></p>

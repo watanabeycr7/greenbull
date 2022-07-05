@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :set_users, only: [:new, :edit]
 
   def index
     @user = current_user
@@ -7,11 +9,6 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
-
-    #編集権限のないユーザーを取得
-    @ordinaly_users = User.where(can_edit: false)
-    #編集権限のあるユーザーを取得
-    @editors = User.where(can_edit: true)
   end
 
   def create
@@ -25,6 +22,28 @@ class SchedulesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    #まずスケジュールを更新
+    @schedule.update(schedule_params)
+    #スケジュールがもつユーザー情報を一旦すべて削除
+    @schedule.user_schedules.destroy_all
+    #user_idを再登録。user_idsに含まれる空文字を除外してから、user_idひとつずつに@scheduleのidと紐付けたレコードを作成。
+    user_schedules_params[:user_ids].compact_blank.each do |p|
+      @schedule.user_schedules.create(user_id: p)
+    end
+    redirect_to schedule_path(params[:id])
+  end
+
+  def destroy
+    @schedule.destroy
+    redirect_to root_path
+  end
 
   private
 
@@ -34,5 +53,16 @@ class SchedulesController < ApplicationController
 
   def user_schedules_params
     params.require(:schedule).require(:user_schedules).permit(user_ids: [])
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def set_users
+    #編集権限のないユーザーを取得
+    @ordinaly_users = User.where(can_edit: false)
+    #編集権限のあるユーザーを取得
+    @editors = User.where(can_edit: true)
   end
 end

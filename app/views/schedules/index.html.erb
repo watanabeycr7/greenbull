@@ -16,6 +16,6 @@ schedules index
   <p>予定一覧</p>
   <p><%= link_to '予定追加', new_schedule_path %></p>
   <% @schedules.each do |s| %>
-    <p><%= s.name %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %>/<%= s.place %>/<%= s.memo %></p>
+    <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %></p>
   <% end %>
 </div>

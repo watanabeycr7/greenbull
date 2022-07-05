@@ -1,0 +1,41 @@
+<h1>schedules # edit</h1>
+
+<%= form_with model: @schedule, url: schedule_path, local: true do |f| %>
+  <p>
+    <%= f.label '予定名' %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label '開始日時' %>
+    <%= f.datetime_local_field :start_date_and_time %>
+  </p>
+  <p>
+    <%= f.label '終了日時' %>
+    <%= f.datetime_local_field :end_date_and_time %>
+  </p>
+  <p>
+    <%= f.label '場所' %>
+    <%= f.text_field :place %>
+  </p>
+  <p>
+    <%= f.label 'メモ' %>
+    <%= f.text_area :memo %>
+  </p>
+  <p>
+    <%= f.fields_for :user_schedules do |u| %>
+      <p>
+        <%= f.label '参加管理者' %>
+        <%= u.collection_check_boxes :user_ids, @editors, :id, :name%>
+      </p>
+      <p>
+      <%= f.label '参加利用者' %>
+      <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
+      </p>
+    <% end %>
+  </p>
+  <p>
+    <%= f.submit '登録' %>
+  </p>
+<% end %>
+
+<p><%= link_to '削除', schedule_path(@schedule.id), method: :DELETE %></p>
