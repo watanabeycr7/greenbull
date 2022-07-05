@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
 
@@ -32,6 +32,12 @@ class UsersController < ApplicationController
     #group_idを登録して保存
     @user.user_groups.create(user_group_params)
     redirect_to user_path(params[:id])
+  end
+
+  #管理者が利用者情報を削除する機能、ユーザー自身の削除はdeviseで行うこと。
+  def destroy
+    @user.destroy
+    redirect_to users_path
   end
 
   private
