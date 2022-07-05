@@ -5,3 +5,5 @@
   <%= f.text_field :name %>
   <%= f.submit '確定する' %>
 <% end %>
+
+<p><%= link_to '削除する', group_path(@group.id), method: :DELETE %></p>

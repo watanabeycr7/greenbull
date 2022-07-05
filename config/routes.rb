@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   }
   root to: 'schedules#index'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
-  resources :groups, only: [:index, :new, :create, :show, :edit, :update]
+  resources :groups
 end

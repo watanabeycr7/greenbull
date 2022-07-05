@@ -1,7 +1,7 @@
 <h1>Users#index</h1>
 
 <% @groups.each do |g| %>
-  <%= g.name %>
+  <p><%= g.name %></p>
   <% g.users.where(can_edit: false).each do |u| %>
     <p>
       <%= link_to u.name, user_path(u.id) %>
