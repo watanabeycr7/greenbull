@@ -1,0 +1,7 @@
+<h1>groups # new</h1>
+
+<%= form_with model: @group, url: groups_path, local: true do |f| %>
+  <%= f.label 'グループ名' %>
+  <%= f.text_field :name %>
+  <%= f.submit '登録'%>
+<% end %>

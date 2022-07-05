@@ -1,0 +1,12 @@
+<h1>groups # show</h1>
+
+<%= @group.name %><%= link_to 'グループ情報を編集する', edit_group_path(@group.id) %>
+
+<% @group.users.each do |u| %>
+  <p><%= link_to u.name, user_path(u.id) %></p>
+<% end %>
+<% if @group.users == [] %>
+  <p>所属している人はいません</p>
+<% end %>
+
+<p><%= link_to 'グループ一覧へ戻る', groups_path %></p>
