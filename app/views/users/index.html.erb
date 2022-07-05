@@ -1,10 +1,16 @@
 <h1>Users#index</h1>
 
-<% @ordinaly_users.each do |o| %>
-  <p>
-    <%= link_to o.name, user_path(o.id) %>
-    <% o.groups.each do |g| %>
-      <%= g.name %>
-    <% end %>
-  </p>
+<% @groups.each do |g| %>
+  <%= g.name %>
+  <% g.users.where(can_edit: false).each do |u| %>
+    <p>
+      <%= link_to u.name, user_path(u.id) %>
+    </p>
+  <% end %>
 <% end %>
+
+<p>未所属</p>
+<% @users_not_in_group.each do |u| %>
+  <p><%= link_to u.name, user_path(u.id)%></p>
+<% end %>
+

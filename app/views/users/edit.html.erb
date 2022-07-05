@@ -1,0 +1,28 @@
+<h1>users# edit</h1>
+
+<p><%= link_to '戻る', user_path(@user.id) %></p>
+
+<%= form_with model: @user, url: user_path, local: true do |f| %>
+  <%= render "users/shared/error_messages", resource: @user %>
+
+  <p>
+    <%= f.label "名前" %>
+    <%= f.text_field :name, autofocus: true, placeholder: "山田太郎" %>
+  </p>
+
+  <p>
+    <%= f.label "メールアドレス" %>
+    <%= f.email_field :email, placeholder: "sample@sample.com" %>
+  </p>
+
+  <p>
+    <%= f.fields_for :user_groups do |group| %>
+      <%= f.label "グループ" %>
+      <%= group.collection_select :group_id, Group.all, :id, :name %>
+    <% end %>
+  </p>
+
+  <p><%= f.submit "登録する" %></p>
+<% end %>
+
+<p><%= link_to '削除', user_path(@user.id), method: :DELETE %></p>
