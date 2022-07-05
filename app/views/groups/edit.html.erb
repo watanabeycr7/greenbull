@@ -1,0 +1,7 @@
+<h1>groups # edit</h1>
+
+<%= form_with model: @group, url: group_path, local: true do |f| %>
+  <%= f.label 'グループ名' %>
+  <%= f.text_field :name %>
+  <%= f.submit '確定する' %>
+<% end %>

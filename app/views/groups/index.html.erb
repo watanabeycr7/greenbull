@@ -3,5 +3,5 @@ groups # index
 <p><%= link_to '新規グループ作成', new_group_path %></p>
 
 <% @groups.each do |g| %>
-  <p><%= g.name %></p>
+  <p><%= link_to g.name, group_path(g.id) %></p>
 <% end %>
