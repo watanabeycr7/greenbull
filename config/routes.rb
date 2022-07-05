@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root to: 'schedules#index'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
   resources :groups
-  resources :schedules, only: [:index, :new, :create, :show, :edit]
+  resources :schedules, only: [:index, :new, :create, :show, :edit, :update]
 end
