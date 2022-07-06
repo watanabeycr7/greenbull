@@ -28,9 +28,15 @@
         <%= u.collection_check_boxes :user_ids, @editors, :id, :name%>
       </p>
       <p>
-      <%= f.label '参加利用者' %>
-      <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
+        <%= f.label '参加利用者' %>
+        <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
       </p>
+    <% end %>
+  </p>
+  <p>
+    <%= f.fields_for :group_schedules do |g| %>
+      <%= f.label 'グループ' %>
+      <%= g.collection_check_boxes :group_ids, Group.all, :id, :name %>
     <% end %>
   </p>
   <p>
