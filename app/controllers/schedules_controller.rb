@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
   before_action :set_users, only: [:new, :edit]
+  # before_action :set_groups, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -18,6 +19,10 @@ class SchedulesController < ApplicationController
     #その後ユーザーとの中間テーブルを作成。user_idsに含まれる空文字を除外してから、user_idひとつずつに@scheduleのidと紐付けたレコードを作成。
     user_schedules_params[:user_ids].compact_blank.each do |p|
       @schedule.user_schedules.create(user_id: p)
+    end
+    #ユーザーと同じことをグループでも行う。
+    group_schedules_params[:group_ids].compact_blank.each do |p|
+      @schedule.group_schedules.create(group_id: p)
     end
     redirect_to root_path
   end
@@ -37,6 +42,11 @@ class SchedulesController < ApplicationController
     user_schedules_params[:user_ids].compact_blank.each do |p|
       @schedule.user_schedules.create(user_id: p)
     end
+    #ユーザーと同じことをグループでも行う。
+    @schedule.group_schedules.destroy_all
+    group_schedules_params[:group_ids].compact_blank.each do |p|
+      @schedule.group_schedules.create(group_id: p)
+    end
     redirect_to schedule_path(params[:id])
   end
 
@@ -53,6 +63,10 @@ class SchedulesController < ApplicationController
 
   def user_schedules_params
     params.require(:schedule).require(:user_schedules).permit(user_ids: [])
+  end
+
+  def group_schedules_params
+    params.require(:schedule).require(:group_schedules).permit(group_ids: [])
   end
 
   def set_schedule
