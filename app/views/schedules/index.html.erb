@@ -15,7 +15,20 @@ schedules index
 <div class="schedule-list">
   <p>予定一覧</p>
   <p><%= link_to '予定追加', new_schedule_path %></p>
-  <% @schedules.each do |s| %>
+
+  <% @groups.each do |g| %>
+    <p><%= link_to g.name, group_path(g.id) %></p>
+    <p>
+      <% g.schedules.each do |s| %>
+        <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %></p>
+      <% end %>
+    </p>
+  <% end %>
+
+<%# if false %>
+  <p>全予定</p>
+  <% @schedules_not_in_group.each do |s| %>
     <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %></p>
   <% end %>
+<%# end %>
 </div>

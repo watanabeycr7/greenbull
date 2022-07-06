@@ -5,7 +5,11 @@ class SchedulesController < ApplicationController
 
   def index
     @user = current_user
-    @schedules = Schedule.all
+    
+    schedules_in_group = Schedule.where(id: GroupSchedule.select(:schedule_id))
+    @schedules_not_in_group = Schedule.where.not(id: schedules_in_group.ids)
+
+    @groups = Group.all
   end
 
   def new
