@@ -33,4 +33,6 @@ header {
 
 .logo {
   font-size: xx-large;
+  text-decoration: none;
+  color: black;
 }
