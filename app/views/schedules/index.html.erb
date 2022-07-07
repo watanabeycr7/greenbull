@@ -16,10 +16,14 @@
     </p>
   <% end %>
 
-<%# if false %>
-  <p>全予定</p>
-  <% @schedules_not_in_group.each do |s| %>
-    <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %></p>
+  <%# if false %>
+    <p>全予定</p>
+    <% @schedules_not_in_group.each do |s| %>
+      <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start_date_and_time %>~<%= s.end_date_and_time %></p>
+    <% end %>
+  <%# end %>
+
+  <%= month_calendar do |date| %>
+    <%= date.day %>
   <% end %>
-<%# end %>
 </div>
