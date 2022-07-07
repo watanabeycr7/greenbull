@@ -21,7 +21,8 @@
   background-color: aliceblue;
   display: inline-block;
   height: 30px;
-  vertical-align: center;
+  line-height: 30px;
+  padding: 10px 10px;
 }
 
 header {
@@ -33,4 +34,6 @@ header {
 
 .logo {
   font-size: xx-large;
+  text-decoration: none;
+  color: black;
 }
