@@ -11,3 +11,35 @@ import "channels"
 Rails.start()
 // Turbolinks.start()
 ActiveStorage.start()
+
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
+
+document.addEventListener('DOMContentLoaded', function () {
+  var calendarEl = document.getElementById('calendar');
+
+  let calendar = new Calendar(calendarEl, {
+    plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
+    initialView: 'dayGridMonth',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,listWeek'
+    },
+    selectable: true,
+    editable: true,
+    locale: "ja",
+
+    dateClick: (e) => {
+      alert('a day has been clicked!');
+    },
+    eventClick: (e) => {
+      console.log("eventClick:", e);
+    }
+  });
+
+  calendar.render();
+});
