@@ -29,13 +29,29 @@ document.addEventListener('DOMContentLoaded', function () {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,listWeek'
     },
+    buttonText: {
+      today: '今日',
+      month: '月',
+      week: '週',
+      day: '日',
+      list: 'リスト'
+    },
     selectable: true,
     editable: true,
     locale: "ja",
 
-    dateClick: (e) => {
-      alert('a day has been clicked!');
+    select: function (info) {
+      const eventName = prompt("イベントを入力してください");
+      if (eventName) {
+        calendar.addEvent({
+          title: eventName,
+          start: info.start,
+          end: info.end,
+          allday: true,
+        });
+      };
     },
+
     eventClick: (e) => {
       console.log("eventClick:", e);
     }
