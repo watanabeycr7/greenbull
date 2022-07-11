@@ -7,11 +7,11 @@
   </p>
   <p>
     <%= f.label '開始日時' %>
-    <%= f.datetime_local_field :start_date_and_time %>
+    <%= f.datetime_local_field :start %>
   </p>
   <p>
     <%= f.label '終了日時' %>
-    <%= f.datetime_local_field :end_date_and_time %>
+    <%= f.datetime_local_field :end %>
   </p>
   <p>
     <%= f.label '場所' %>
@@ -19,7 +19,7 @@
   </p>
   <p>
     <%= f.label 'メモ' %>
-    <%= f.text_area :memo %>
+    <%= f.text_area :description %>
   </p>
   <p>
     <%= f.fields_for :user_schedules do |u| %>

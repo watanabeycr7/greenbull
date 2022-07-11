@@ -4,10 +4,10 @@
   予定名：<%= @schedule.name %>
 </p>
 <p>
-  開始日時：<%= @schedule.start_date_and_time %>
+  開始日時：<%= @schedule.start %>
 </p>
 <p>
-  終了日時：<%= @schedule.end_date_and_time %>
+  終了日時：<%= @schedule.end %>
 </p>
 <p>
   参加者：
@@ -25,6 +25,6 @@
   場所：<%= @schedule.place %>
 </p>
 <p>
-  メモ：<%= @schedule.memo %>
+  メモ：<%= @schedule.description %>
 </p>
 <p><%= link_to '編集する', edit_schedule_path(@schedule.id) %></p>

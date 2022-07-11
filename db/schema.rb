@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_034256) do
+ActiveRecord::Schema.define(version: 2022_07_11_075348) do
 
   create_table "group_schedules", charset: "utf8", force: :cascade do |t|
     t.bigint "group_id", null: false
@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2022_07_01_034256) do
 
   create_table "schedules", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.datetime "start_date_and_time", null: false
-    t.datetime "end_date_and_time", null: false
+    t.datetime "start", null: false
+    t.datetime "end", null: false
     t.string "place"
-    t.text "memo"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
