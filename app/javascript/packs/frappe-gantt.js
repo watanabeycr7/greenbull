@@ -1,4 +1,3 @@
-console.log("frappe-gantt")
 var Gantt = (function () {
     'use strict';
 
