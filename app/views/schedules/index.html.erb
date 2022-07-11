@@ -17,7 +17,7 @@
   <% end %>
 
 <%# if false %>
-  <p>全予定</p>
+  <p>その他の予定</p>
   <% @schedules_not_in_group.each do |s| %>
     <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start %>~<%= s.end %></p>
   <% end %>
