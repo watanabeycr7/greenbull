@@ -8,8 +8,12 @@ class SchedulesController < ApplicationController
     
     schedules_in_group = Schedule.where(id: GroupSchedule.select(:schedule_id))
     @schedules_not_in_group = Schedule.where.not(id: schedules_in_group.ids)
-
     @groups = Group.all
+  end
+
+  def frappe_gantt
+    all_schedules = Schedule.all.to_a
+    render json:{ all_schedules: all_schedules }
   end
 
   def new
@@ -62,7 +66,7 @@ class SchedulesController < ApplicationController
   private
 
   def schedule_params
-    params.require(:schedule).permit(:name, :start_date_and_time, :end_date_and_time, :place, :memo)
+    params.require(:schedule).permit(:name, :start, :end, :place, :description)
   end
 
   def user_schedules_params
