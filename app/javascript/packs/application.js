@@ -4,16 +4,16 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-// import Turbolinks from "turbolinks"
+import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "./frappe-gantt"
 
 Rails.start()
-// Turbolinks.start()
+Turbolinks.start()
 ActiveStorage.start()
 
-window.onload = function () {
+document.addEventListener("turbolinks:load", function () {
   let tasks = [];
 
   const XHR = new XMLHttpRequest();
@@ -51,4 +51,4 @@ window.onload = function () {
       },
     });
   };
-};
+});
