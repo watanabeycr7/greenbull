@@ -1,24 +1,25 @@
-# README
+# アプリケーション名
+greenbull
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+ユーザーごと、グループごとに予定を管理
 
-Things you may want to cover:
+# URL
+<https://greenbull.herokuapp.com/>
 
-* Ruby version
+# テスト用アカウント
++ Basic認証ID: wtnbkyt
++ Basic認証password: 38043
++ メールアドレス:
++ パスワード:
 
-* System dependencies
+# 利用方法
 
-* Configuration
+# アプリケーションを作成した背景
+自分自身の前職での経験から、編集権限のあるユーザーがその他のユーザーの予定を把握し自由に編集できるツールの必要性を感じた。ユーザーごとやグループごとに一覧表示をして予定の管理をしやすくするアプリケーションを開発することにした。
 
-* Database creation
+# 洗い出した要件
 
-* Database initialization
+# 実装した機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 実装予定の機能
