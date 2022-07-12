@@ -43,7 +43,6 @@ document.addEventListener("turbolinks:load", function () {
         },
       )
     });
-
     // gantt をセットアップ
     var gantt = new Gantt("#gantt", tasks, {
       // ダブルクリック時
@@ -59,47 +58,49 @@ document.addEventListener("turbolinks:load", function () {
         console.log(`${task.name}: change progress to ${progress}%`);
       },
     });
+    // fullcalendar
+    // 現時点ではガントチャートの上に表示される理由は不明
+    var calendarEl = document.getElementById('calendar');
+
+    let calendar = new Calendar(calendarEl, {
+      plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
+      initialView: 'dayGridMonth',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,listWeek'
+      },
+      buttonText: {
+        today: '今日',
+        month: '月',
+        week: '週',
+        day: '日',
+        list: 'リスト'
+      },
+      selectable: true,
+      editable: true,
+      locale: "ja",
+
+      select: function (info) {
+        const eventName = prompt("イベントを入力してください");
+        if (eventName) {
+          calendar.addEvent({
+            title: eventName,
+            start: info.start,
+            end: info.end,
+            allday: true,
+          });
+        };
+      },
+
+      eventClick: (e) => {
+        console.log("eventClick:", e);
+      },
+
+      // frappe-ganttで予定を格納した変数'tasks'を使って表示
+      events: tasks
+    });
+
+    calendar.render();
   };
-
-  // fullcalendar
-  // XHR.onloadの外部にあるため、現時点ではガントチャートの上に表示される
-  var calendarEl = document.getElementById('calendar');
-
-  let calendar = new Calendar(calendarEl, {
-    plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
-    initialView: 'dayGridMonth',
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,listWeek'
-    },
-    buttonText: {
-      today: '今日',
-      month: '月',
-      week: '週',
-      day: '日',
-      list: 'リスト'
-    },
-    selectable: true,
-    editable: true,
-    locale: "ja",
-
-    select: function (info) {
-      const eventName = prompt("イベントを入力してください");
-      if (eventName) {
-        calendar.addEvent({
-          title: eventName,
-          start: info.start,
-          end: info.end,
-          allday: true,
-        });
-      };
-    },
-
-    eventClick: (e) => {
-      console.log("eventClick:", e);
-    }
-  });
-
-  calendar.render();
 });
