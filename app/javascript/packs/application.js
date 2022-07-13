@@ -63,13 +63,19 @@ document.addEventListener("turbolinks:load", function () {
     // 現時点ではガントチャートの上に表示される理由は不明
     var calendarEl = document.getElementById('calendar');
 
+    // ここでevents配列にすべての予定を格納
     let events = [];
+    console.log(allSchedules)
     allSchedules.forEach(element => {
       events.unshift(
         {
           title: element.name,
           start: element.start,
-          end: element.end
+          end: element.end,
+          extendedProps: {
+            description: element.description,
+            place: element.place
+          },
         }
       )
     })
@@ -105,8 +111,14 @@ document.addEventListener("turbolinks:load", function () {
         };
       },
 
-      eventClick: (e) => {
-        console.log("eventClick:", e);
+      eventClick: function (info) {
+        let eventObj = info.event;
+        alert(`Event: ${eventObj.title}
+start: ${eventObj.start}
+end: ${eventObj.end}
+description: ${eventObj.extendedProps.description}
+place: ${eventObj.extendedProps.place}`
+        );
       },
 
       // 'events'は配列に予定をforeachで格納したもの
