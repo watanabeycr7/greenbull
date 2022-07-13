@@ -58,9 +58,21 @@ document.addEventListener("turbolinks:load", function () {
         console.log(`${task.name}: change progress to ${progress}%`);
       },
     });
+
     // fullcalendar
     // 現時点ではガントチャートの上に表示される理由は不明
     var calendarEl = document.getElementById('calendar');
+
+    let events = [];
+    allSchedules.forEach(element => {
+      events.unshift(
+        {
+          title: element.name,
+          start: element.start,
+          end: element.end
+        }
+      )
+    })
 
     let calendar = new Calendar(calendarEl, {
       plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
@@ -97,8 +109,8 @@ document.addEventListener("turbolinks:load", function () {
         console.log("eventClick:", e);
       },
 
-      // frappe-ganttで予定を格納した変数'tasks'を使って表示
-      events: tasks
+      // 'events'は配列に予定をforeachで格納したもの
+      events: events
     });
 
     calendar.render();
