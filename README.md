@@ -57,6 +57,13 @@ greenbull
 # 開発環境
 HTML, CSS, JavaScript, Ruby on Rails, vscode, github
 
+# ローカルでの動作方法
+以下のコマンドを実行
+1. git clone <https://github.com/31-wtcr/greenbull.git>
+2. cd greenbull
+3. bundle install
+4. yarn install
+
 # 工夫した点
 + スケジュール登録時に、グループとユーザーを紐付けて中間テーブルへ同時に保存すること
 + javascriptのライブラリを用いてスケジュールを動的に表示させること
