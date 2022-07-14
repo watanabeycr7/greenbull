@@ -15,7 +15,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     @user.save
-    @user_group = @user.user_groups.create(user_group_params)
+    # グループが存在しない場合にストロングパラメータを取得しようとしてエラーがでるため、`if params[:user][:user_groups]`で存在するときのみ中間テーブルのレコードを作成
+    @user_group = @user.user_groups.create(user_group_params) if params[:user][:user_groups]
   end
 
   # GET /resource/edit
