@@ -8,7 +8,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 
-document.addEventListener("turbolinks:load", function () {
+window.addEventListener("load", function () {
   // frappe-gantt
   let tasks = [];
 
