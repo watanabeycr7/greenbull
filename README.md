@@ -10,8 +10,8 @@ greenbull
 # テスト用アカウント
 + Basic認証ID: wtnbkyt
 + Basic認証password: 38043
-+ メールアドレス:
-+ パスワード:
++ メールアドレス:aaa@aaa
++ パスワード:aaaaaa
 
 # 利用方法
 + 予定の追加
@@ -41,6 +41,7 @@ greenbull
 <https://docs.google.com/spreadsheets/d/14l2DsDKMiJvEoMWP8eK4EQyYeQh78YRsr4dQIcODQCg/edit#gid=543973842>
 
 # 実装予定の機能
++ ローカル環境ではカレンダーが正常に表示されるが、本番環境で表示されない問題の修正
 + スケジュールを画面遷移することなくトップページ上で追加、編集可能にする
 + スケジュール編集開始時に、登録されてある情報をもとにユーザーとグループが自動で選択されるようにする
 + タイムゾーン設定を日本標準時に合わせる
