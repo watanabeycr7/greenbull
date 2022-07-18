@@ -1,5 +1,4 @@
-<h1>Users#index</h1>
-
+<h3>利用者一覧</h3>
 <% @groups.each do |g| %>
   <p><%= g.name %></p>
   <% g.users.where(can_edit: false).each do |u| %>

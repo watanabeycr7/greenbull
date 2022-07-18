@@ -53,6 +53,12 @@ greenbull
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/18ed64e6618cd581fd43aca5d36f296c.png)](https://gyazo.com/18ed64e6618cd581fd43aca5d36f296c)
 
+## スクリーンショット
+トップページ
+[![Image from Gyazo](https://i.gyazo.com/4f6015d6f536f75abe6d69bca976beb0.png)](https://gyazo.com/4f6015d6f536f75abe6d69bca976beb0)
+
+
+
 # 開発環境
 HTML, CSS, JavaScript, Ruby on Rails, vscode, github
 
