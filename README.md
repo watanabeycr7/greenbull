@@ -41,6 +41,7 @@ greenbull
 <https://docs.google.com/spreadsheets/d/14l2DsDKMiJvEoMWP8eK4EQyYeQh78YRsr4dQIcODQCg/edit#gid=543973842>
 
 # 実装予定の機能
++ トップページ以外のCSS装飾の実装
 + スケジュールを画面遷移することなくトップページ上で追加、編集可能にする
 + スケジュール編集開始時に、登録されてある情報をもとにユーザーとグループが自動で選択されるようにする
 + ユーザー詳細ページにそのユーザーが紐付けられた予定を一覧表示する
@@ -57,7 +58,14 @@ greenbull
 トップページ
 [![Image from Gyazo](https://i.gyazo.com/4f6015d6f536f75abe6d69bca976beb0.png)](https://gyazo.com/4f6015d6f536f75abe6d69bca976beb0)
 
+マイページ
+[![Image from Gyazo](https://i.gyazo.com/e8dca084a77867cb2404d8db120054a3.png)](https://gyazo.com/e8dca084a77867cb2404d8db120054a3)
 
+利用者一覧
+[![Image from Gyazo](https://i.gyazo.com/650df22c4de818f6bc137a40252fe611.png)](https://gyazo.com/650df22c4de818f6bc137a40252fe611)
+
+グループ一覧
+[![Image from Gyazo](https://i.gyazo.com/e6c25f43d06e228651ccb03ecf5b3d16.png)](https://gyazo.com/e6c25f43d06e228651ccb03ecf5b3d16)
 
 # 開発環境
 HTML, CSS, JavaScript, Ruby on Rails, vscode, github
