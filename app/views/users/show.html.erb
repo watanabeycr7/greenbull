@@ -1,19 +1,21 @@
-<h3><%= @user.name %>さんのユーザーページ</h3>
-
-<table border = 1>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= @user.email %></td>
-  </tr>
-  <tr>
-    <th>所属グループ</th>
-    <td>
-      <% @user.groups.each do |g| %>
-        <%= g.name %>
-      <% end %>
-    </td>
-  </tr>
-</table>
-
-<p><%= link_to '編集', edit_user_path(@user.id) %></p>
-<p><%= link_to 'ユーザー一覧へ戻る', users_path %></p>
+<div class="main-wrapper">
+  <h3 class="username"><%= @user.name %>さんのマイページ</h3>
+  <table border = 1 class="table">
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th>所属グループ</th>
+      <td>
+        <% @user.groups.each do |g| %>
+          <%= g.name %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+  <div class="bottom btns">
+    <p><%= link_to '編集', edit_user_path(@user.id), class:"btn" %></p>
+    <p><%= link_to 'ユーザー一覧へ戻る', users_path, class:"btn" %></p>
+  </div>
+</div>
