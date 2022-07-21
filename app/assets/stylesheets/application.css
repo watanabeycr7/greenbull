@@ -19,11 +19,17 @@
   text-decoration: none;
   color: black;
   background-color: aliceblue;
+  border: 1px black outset;
+  border-radius: 1px;
   display: inline-block;
   height: 30px;
   line-height: 30px;
   padding: 10px 10px;
   margin: 0 5px;
+}
+
+.btn:active {
+  border: 1px black inset;
 }
 
 header {
