@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_07_11_075348) do
 
-  create_table "group_schedules", charset: "utf8", force: :cascade do |t|
+  create_table "group_schedules", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 2022_07_11_075348) do
     t.index ["schedule_id"], name: "index_group_schedules_on_schedule_id"
   end
 
-  create_table "groups", charset: "utf8", force: :cascade do |t|
+  create_table "groups", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "schedules", charset: "utf8", force: :cascade do |t|
+  create_table "schedules", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "start", null: false
     t.datetime "end", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_075348) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_groups", charset: "utf8", force: :cascade do |t|
+  create_table "user_groups", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "group_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_075348) do
     t.index ["user_id"], name: "index_user_groups_on_user_id"
   end
 
-  create_table "user_schedules", charset: "utf8", force: :cascade do |t|
+  create_table "user_schedules", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "schedule_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_075348) do
     t.index ["user_id"], name: "index_user_schedules_on_user_id"
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
