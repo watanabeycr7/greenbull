@@ -73,7 +73,8 @@ header {
 .submit {
   background-color: aliceblue;
   display: inline-block;
-  border: none;
+  border: 1px black outset;
+  border-radius: 1px;
   box-sizing: border-box;
   height: 50px;
   line-height: 30px;
