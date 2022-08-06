@@ -1,15 +1,33 @@
-<h3>利用者一覧</h3>
-<% @groups.each do |g| %>
-  <p><%= g.name %></p>
-  <% g.users.where(can_edit: false).each do |u| %>
-    <p>
-      <%= link_to u.name, user_path(u.id) %>
-    </p>
-  <% end %>
-<% end %>
+<div class="main-wrapper">
+  <h3 class="page-title">利用者一覧</h3>
 
-<p>未所属</p>
-<% @users_not_in_group.each do |u| %>
-  <p><%= link_to u.name, user_path(u.id)%></p>
-<% end %>
+  <div class="table">
+    <% @groups.each do |g| %>
+      <div class="table-row">
+        <div class="table-row-left">
+          <p><%= g.name %></p>
+        </div>
+        <% g.users.where(can_edit: false).each do |u| %>
+          <div class="table-row-right">
+            <p>
+              <%= link_to u.name, user_path(u.id) %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+      
+    <div class="table-row">
+      <div class="table-row-left">
+        <p>未所属</p>
+      </div>
+      <div class="table-row-right">
+        <% @users_not_in_group.each do |u| %>
+          <p><%= link_to u.name, user_path(u.id)%></p>
+        <% end %>
+      </div>
+    </div>
 
+  </div>
+
+</div>
