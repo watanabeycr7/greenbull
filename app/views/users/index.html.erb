@@ -7,13 +7,13 @@
         <div class="table-row-left">
           <p><%= g.name %></p>
         </div>
-        <% g.users.where(can_edit: false).each do |u| %>
-          <div class="table-row-right">
+        <div class="table-row-right">
+          <% g.users.where(can_edit: false).each do |u| %>
             <p>
               <%= link_to u.name, user_path(u.id) %>
             </p>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
       
