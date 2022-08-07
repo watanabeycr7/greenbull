@@ -1,12 +1,24 @@
-<h1>groups # show</h1>
+<div class="main-wrapper">
+  <h3 class="page-title">
+    <p>グループ情報：<%= @group.name %></p>
+  </h3>
+  <div class="table">
+    <div class="table-row">
+      <div class="table-row-left">
+        <% @group.users.each do |u| %>
+          <p><%= link_to u.name, user_path(u.id) %></p>
+        <% end %>
+        <% if @group.users == [] %>
+          <p>所属している人はいません</p>
+        <% end %>
+      </div>
+      <div class="table-row-right">
+      </div>
+    </div>
+  </div>
 
-<%= @group.name %><%= link_to 'グループ情報を編集する', edit_group_path(@group.id) %>
-
-<% @group.users.each do |u| %>
-  <p><%= link_to u.name, user_path(u.id) %></p>
-<% end %>
-<% if @group.users == [] %>
-  <p>所属している人はいません</p>
-<% end %>
-
-<p><%= link_to 'グループ一覧へ戻る', groups_path %></p>
+  <div class="bottom btns">
+    <p><%= link_to 'グループ情報を編集する', edit_group_path(@group.id), class:"btn" %></p>
+    <p><%= link_to 'グループ一覧へ戻る', groups_path, class:"btn" %></p>
+  </div>
+</div>

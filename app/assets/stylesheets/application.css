@@ -88,3 +88,52 @@ header {
 }
 
 /* ログイン画面 ここまで */
+
+/* 利用者一覧・グループ一覧・マイページ グループ情報 */
+
+.btns {
+  display: flex;
+}
+
+.main-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.page-title {
+  width: auto;
+  text-align: center;
+}
+
+.table {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.table-row-left {
+  width: 40%;
+  border-right: 1px silver solid;
+  padding: 10px;
+}
+
+.table-row-right {
+  width: 60%;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.bottom {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 利用者一覧・グループ一覧・マイページ ここまで */
