@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
   database: greenbull_production
   username: greenbull
   password: <%= ENV['GREENBULL_DATABASE_PASSWORD'] %>
