@@ -41,6 +41,7 @@ greenbull
 <https://docs.google.com/spreadsheets/d/14l2DsDKMiJvEoMWP8eK4EQyYeQh78YRsr4dQIcODQCg/edit#gid=543973842>
 
 # 実装予定の機能
++ /adminページのtranslationを適切な表示へ変更
 + トップページ以外のCSS装飾の実装
 + スケジュールを画面遷移することなくトップページ上で追加、編集可能にする
 + スケジュール編集開始時に、登録されてある情報をもとにユーザーとグループが自動で選択されるようにする
