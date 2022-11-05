@@ -1,8 +1,8 @@
-<div class="login_wrapper">
+<div class="wrapper">
   <h2>ログインしてください</h2>
   <%= form_with model: resource, url: user_session_path, method: :POST, local: true do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
-    <div class="login_form">
+    <div class="form">
       <div class="email">
         <%= f.label "メールアドレス" %>
         <%= f.email_field :email, placeholder: "sample@sample.com" %>

@@ -25,7 +25,7 @@
   height: 30px;
   line-height: 30px;
   padding: 10px 10px;
-  margin: 0 5px;
+  margin: 10px;
 }
 
 .btn:active {
@@ -47,24 +47,21 @@ header {
 
 /* 全ページ共通の装飾 ここまで */
 
-/* ログイン画面 */
+/* ログイン画面 ユーザー情報編集*/
 
-.login_wrapper {
+.wrapper {
   text-align: center;
 }
 
-.login_form {
+.form {
   width: 400px;
   margin: 0 auto;
 }
 
-.email {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-}
-
-.password {
+.email,
+.password,
+.name,
+.group {
   display: flex;
   justify-content: space-between;
   margin: 10px;
@@ -87,13 +84,14 @@ header {
   cursor: pointer;
 }
 
-/* ログイン画面 ここまで */
-
-/* 利用者一覧・グループ一覧・マイページ グループ情報 */
-
 .btns {
   display: flex;
+  justify-content: space-evenly;
 }
+
+/* ログイン画面 ユーザー情報編集 ここまで */
+
+/* 利用者一覧・グループ一覧・マイページ グループ情報 */
 
 .main-wrapper {
   width: 85%;
@@ -137,3 +135,13 @@ header {
 }
 
 /* 利用者一覧・グループ一覧・マイページ ここまで */
+
+/* トップページ */
+.main_top {
+  display: flex;
+  align-items: center;
+}
+
+.welcome_message {
+  margin: 0 20px;
+}

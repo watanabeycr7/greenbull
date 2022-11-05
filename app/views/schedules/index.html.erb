@@ -1,13 +1,12 @@
 <%= javascript_pack_tag "index" %>
-<div>
+<div class="main_top">
   <% if user_signed_in? %>
-    <p>ようこそ、<%= @user.name %>さん</p>
+    <p class="welcome_message">ようこそ、<%= @user.name %>さん</p>
   <% end %>
+  <p><%= link_to '予定追加', new_schedule_path, class:"btn" %></p>
 </div>
 <div class="schedules-wrapper">
   <p>予定一覧</p>
-  <p><%= link_to '予定追加', new_schedule_path %></p>
-
 <% if false %>
   <% @groups.each do |g| %>
     <p><%= link_to g.name, group_path(g.id) %></p>
