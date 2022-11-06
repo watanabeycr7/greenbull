@@ -61,7 +61,14 @@ form {
 .email,
 .password,
 .name,
-.group {
+.group,
+.schedule,
+.start,
+.end,
+.place,
+.description,
+.editors,
+.ordinaly_users {
   display: flex;
   justify-content: space-between;
   margin: 10px;
