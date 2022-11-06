@@ -1,46 +1,45 @@
-<h1>schedules # new</h1>
-
-<%= form_with model:@schedule, url: schedules_path, local: true do |f| %>
-  <p>
-    <%= f.label '予定名' %>
-    <%= f.text_field :name, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label '開始日時' %>
-    <%= f.datetime_local_field :start %>
-  </p>
-  <p>
-    <%= f.label '終了日時' %>
-    <%= f.datetime_local_field :end %>
-  </p>
-  <p>
-    <%= f.label '場所' %>
-    <%= f.text_field :place %>
-  </p>
-  <p>
-    <%= f.label 'メモ' %>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.fields_for :user_schedules do |u| %>
-      <p>
-        <%= f.label '参加管理者' %>
-        <%= u.collection_check_boxes :user_ids, @editors, :id, :name%>
-      </p>
-      <p>
-      <%= f.label '参加利用者' %>
-      <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
-      </p>
-    <% end %>
-  </p>
-  <p>
-    <%= f.fields_for :group_schedules do |g| %>
-      <%= f.label 'グループ' %>
-      <%= g.collection_check_boxes :group_ids, Group.all, :id, :name %>
-    <% end %>
-  </p>
-  <p>
-    <%= f.submit '登録' %>
-  </p>
-
-<% end %>
+<div class="wrapper">
+  <%= form_with model:@schedule, url: schedules_path, local: true do |f| %>
+    <div class="schedule">
+      <%= f.label '予定名' %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div class="start">
+      <%= f.label '開始日時' %>
+      <%= f.datetime_local_field :start %>
+    </div>
+    <div class="end">
+      <%= f.label '終了日時' %>
+      <%= f.datetime_local_field :end %>
+    </div>
+    <div class="place">
+      <%= f.label '場所' %>
+      <%= f.text_field :place %>
+    </div>
+    <div class="description">
+      <%= f.label 'メモ' %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.fields_for :user_schedules do |u| %>
+        <div class="editors">
+          <%= f.label '参加管理者' %>
+          <%= u.collection_check_boxes :user_ids, @editors, :id, :name%>
+        </div>
+        <div class="ordinaly_users">
+          <%= f.label '参加利用者' %>
+          <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
+        </div>
+      <% end %>
+    </div>
+    <div class="group">
+      <%= f.fields_for :group_schedules do |g| %>
+        <%= f.label 'グループ' %>
+        <%= g.collection_check_boxes :group_ids, Group.all, :id, :name %>
+      <% end %>
+    </div>
+    <div class="btns">
+      <%= f.submit '登録', class:"submit" %>
+    </div>
+  <% end %>
+</div>

@@ -1,9 +1,12 @@
-<h1>groups # edit</h1>
-
-<%= form_with model: @group, url: group_path, local: true do |f| %>
-  <%= f.label 'グループ名' %>
-  <%= f.text_field :name %>
-  <%= f.submit '確定する' %>
-<% end %>
-
-<p><%= link_to '削除する', group_path(@group.id), method: :DELETE %></p>
+<div class="wrapper">
+  <%= form_with model: @group, url: group_path, local: true do |f| %>
+    <div class="group">
+      <%= f.label 'グループ名' %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="btns">
+      <%= f.submit '確定する', class: "submit" %>
+      <%= link_to '削除する', group_path(@group.id), method: :DELETE, class:"btn" %>
+    </div>
+  <% end %>
+</div>

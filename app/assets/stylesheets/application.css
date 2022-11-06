@@ -53,7 +53,7 @@ header {
   text-align: center;
 }
 
-.form {
+form {
   width: 400px;
   margin: 0 auto;
 }
@@ -61,7 +61,14 @@ header {
 .email,
 .password,
 .name,
-.group {
+.group,
+.schedule,
+.start,
+.end,
+.place,
+.description,
+.editors,
+.ordinaly_users {
   display: flex;
   justify-content: space-between;
   margin: 10px;

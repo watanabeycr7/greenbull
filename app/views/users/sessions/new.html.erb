@@ -2,16 +2,14 @@
   <h2>ログインしてください</h2>
   <%= form_with model: resource, url: user_session_path, method: :POST, local: true do |f| %>
     <%= render "users/shared/error_messages", resource: resource %>
-    <div class="form">
-      <div class="email">
-        <%= f.label "メールアドレス" %>
-        <%= f.email_field :email, placeholder: "sample@sample.com" %>
-      </div>
-      <div class="password">
-        <%= f.label "パスワード" %>
-        <%= f.password_field :password, placeholder: "英数字6文字以上のパスワード" %>
-      </div>
-      <%= f.submit "ログイン", class: "submit"%>
+    <div class="email">
+      <%= f.label "メールアドレス" %>
+      <%= f.email_field :email, placeholder: "sample@sample.com" %>
     </div>
+    <div class="password">
+      <%= f.label "パスワード" %>
+      <%= f.password_field :password, placeholder: "英数字6文字以上のパスワード" %>
+    </div>
+    <%= f.submit "ログイン", class: "submit"%>
   <% end %>
 </div>
