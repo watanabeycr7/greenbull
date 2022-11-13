@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :schedules do
     collection do
-      get 'frappe_gantt'
+      get 'all_schedules'
     end
   end
 end

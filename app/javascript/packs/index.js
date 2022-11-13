@@ -9,11 +9,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 
 window.addEventListener("load", function () {
-  // frappe-gantt
   let tasks = [];
 
   const XHR = new XMLHttpRequest();
-  XHR.open("GET", "/schedules/frappe_gantt", true);
+  XHR.open("GET", "/schedules/all_schedules", true);
   XHR.responseType = "json";
   XHR.send();
   XHR.onload = () => {
@@ -30,6 +29,7 @@ window.addEventListener("load", function () {
         },
       )
     });
+    // frappe-gantt
     // // gantt をセットアップ
     // var gantt = new Gantt("#gantt", tasks, {
     //   // ダブルクリック時
