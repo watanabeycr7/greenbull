@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
   let tasks = [];
 
   const XHR = new XMLHttpRequest();
+  // コントローラーで設定したURLにアクセスして予定の配列を取得
   XHR.open("GET", "/schedules/all_schedules", true);
   XHR.responseType = "json";
   XHR.send();

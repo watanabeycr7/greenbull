@@ -52,13 +52,15 @@ header .logo {
   text-decoration: none;
 }
 
+.main-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  background-color: white;
+}
+
 /* 全ページ共通の装飾 ここまで */
 
 /* ログイン画面 ユーザー情報編集*/
-
-.wrapper {
-  text-align: center;
-}
 
 form {
   width: 400px;
@@ -108,11 +110,6 @@ form {
 
 /* 利用者一覧・グループ一覧・マイページ グループ情報 */
 
-.main-wrapper {
-  width: 85%;
-  margin: 0 auto;
-  background-color: white;
-}
 
 .page-title {
   width: auto;
@@ -160,4 +157,8 @@ form {
 
 .welcome_message {
   margin: 0 20px;
+}
+
+#calendar {
+  background-color: white;
 }
