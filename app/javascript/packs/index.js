@@ -9,11 +9,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 
 window.addEventListener("load", function () {
-  // frappe-gantt
   let tasks = [];
 
   const XHR = new XMLHttpRequest();
-  XHR.open("GET", "/schedules/frappe_gantt", true);
+  XHR.open("GET", "/schedules/all_schedules", true);
   XHR.responseType = "json";
   XHR.send();
   XHR.onload = () => {
@@ -30,21 +29,22 @@ window.addEventListener("load", function () {
         },
       )
     });
-    // gantt をセットアップ
-    var gantt = new Gantt("#gantt", tasks, {
-      // ダブルクリック時
-      on_click: (task) => {
-        console.log(task.description);
-      },
-      // 日付変更時
-      on_date_change: (task, start, end) => {
-        console.log(`${task.name}: change date`);
-      },
-      // 進捗変更時
-      on_progress_change: (task, progress) => {
-        console.log(`${task.name}: change progress to ${progress}%`);
-      },
-    });
+    // frappe-gantt
+    // // gantt をセットアップ
+    // var gantt = new Gantt("#gantt", tasks, {
+    //   // ダブルクリック時
+    //   on_click: (task) => {
+    //     console.log(task.description);
+    //   },
+    //   // 日付変更時
+    //   on_date_change: (task, start, end) => {
+    //     console.log(`${task.name}: change date`);
+    //   },
+    //   // 進捗変更時
+    //   on_progress_change: (task, progress) => {
+    //     console.log(`${task.name}: change progress to ${progress}%`);
+    //   },
+    // });
 
     // fullcalendar
     // 現時点ではガントチャートの上に表示される理由は不明

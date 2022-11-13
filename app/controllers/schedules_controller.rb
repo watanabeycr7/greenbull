@@ -11,7 +11,7 @@ class SchedulesController < ApplicationController
     @groups = Group.all
   end
 
-  def frappe_gantt
+  def all_schedules
     all_schedules = Schedule.all.to_a
     render json:{ all_schedules: all_schedules }
   end
