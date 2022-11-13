@@ -15,10 +15,15 @@
  */
 
 /* 全ページ共通の装飾 */
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .btn {
   text-decoration: none;
-  color: black;
-  background-color: aliceblue;
+  color: white;
+  background-color: #FA9420;
   border: 1px black outset;
   border-radius: 1px;
   display: inline-block;
@@ -37,12 +42,13 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid silver;
+  background-color: #39FA5D;
 }
 
-.logo {
+header .logo {
+  color: white;
   font-size: xx-large;
   text-decoration: none;
-  color: black;
 }
 
 /* 全ページ共通の装飾 ここまで */
@@ -75,7 +81,7 @@ form {
 }
 
 .submit {
-  background-color: aliceblue;
+  background-color: #FA9420;
   display: inline-block;
   border: 1px black outset;
   border-radius: 1px;
@@ -85,6 +91,7 @@ form {
   padding: 10px 10px;
   margin: 10px;
   font-size: 16px;
+  color: white;
 }
 
 .submit:hover {
