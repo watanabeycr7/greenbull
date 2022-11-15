@@ -7,6 +7,10 @@
           <p><%= link_to g.name, group_path(g.id) %></p>
           </div>
         <div class="table-row-right">
+          <%# グループ内のユーザーの名前をすべて取得 %>
+          <% g.users.each do |u| %>
+            <p><%= link_to u.name, user_path(u.id) %></p>
+          <% end %>
         </div>
       </div>
     <% end %>
