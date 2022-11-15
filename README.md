@@ -5,7 +5,7 @@ greenbull
 ユーザーごと、グループごとに予定を管理
 
 # URL
-<https://greenbull.herokuapp.com/>
+<https://greenbull.onrender.com/>
 
 # テスト用アカウント
 + Basic認証ID: wtnbkyt
@@ -15,9 +15,8 @@ greenbull
 
 # 利用方法
 + 予定の追加
-  1. トップページの予定追加リンクを押す
-  2. 予定名・開始日時・終了日時・場所・メモを入力
-  3. 該当する参加者とグループにチェックを入れて登録ボタンを押す
+  1. トップページの予定追加フォームに、予定名・開始日時・終了日時・場所・メモを入力
+  2. 該当する参加者とグループにチェックを入れて登録ボタンを押す
 + グループの追加、編集
   1. ヘッダーのグループ一覧を押す
   2. 新規グループ作成を押し、グループ名を入力し登録ボタンを押す
@@ -43,7 +42,7 @@ greenbull
 # 実装予定の機能
 + CSS装飾の実装
 + スケジュール情報が1件も存在しない場合にカレンダーが表示されるかわりに、スケジュール登録の操作説明を表示させる。
-+ スケジュールを画面遷移することなくトップページ上で追加、編集可能にする
++ スケジュールを画面遷移することなくトップページ上で編集可能にする
 + スケジュール編集開始時に、登録されてある情報をもとにユーザーとグループが自動で選択されるようにする
 + ユーザー詳細ページにそのユーザーが紐付けられた予定を一覧表示する
 + ユーザーの権限を3種類（閲覧者・編集者・管理者）に分け、アクセスできるページを権限により制限する
@@ -57,16 +56,16 @@ greenbull
 
 ## スクリーンショット
 トップページ
-[![Image from Gyazo](https://i.gyazo.com/4f6015d6f536f75abe6d69bca976beb0.png)](https://gyazo.com/4f6015d6f536f75abe6d69bca976beb0)
+[![Image from Gyazo](https://i.gyazo.com/df0c3ea60a25888bda776f042cbd9124.png)](https://gyazo.com/df0c3ea60a25888bda776f042cbd9124)
 
 マイページ
-[![Image from Gyazo](https://i.gyazo.com/e8dca084a77867cb2404d8db120054a3.png)](https://gyazo.com/e8dca084a77867cb2404d8db120054a3)
+[![Image from Gyazo](https://i.gyazo.com/a828a31fc7797692ffd022eccf9c0a52.png)](https://gyazo.com/a828a31fc7797692ffd022eccf9c0a52)
 
 利用者一覧
-[![Image from Gyazo](https://i.gyazo.com/650df22c4de818f6bc137a40252fe611.png)](https://gyazo.com/650df22c4de818f6bc137a40252fe611)
+[![Image from Gyazo](https://i.gyazo.com/34f156b6a0581cda6f80548ae5dd5d80.png)](https://gyazo.com/34f156b6a0581cda6f80548ae5dd5d80)
 
 グループ一覧
-[![Image from Gyazo](https://i.gyazo.com/e6c25f43d06e228651ccb03ecf5b3d16.png)](https://gyazo.com/e6c25f43d06e228651ccb03ecf5b3d16)
+[![Image from Gyazo](https://i.gyazo.com/b5829b3ae68e7243ad1c2b6d275718ae.png)](https://gyazo.com/b5829b3ae68e7243ad1c2b6d275718ae)
 
 # 開発環境
 HTML, CSS, JavaScript, Ruby on Rails, vscode, github
