@@ -2,7 +2,7 @@
   <div><%= link_to 'Greenbull', root_path, class:"logo" %></div>
   <div class="header_right">
     <% if user_signed_in? %>
-        <%= link_to 'マイページ', user_path(current_user.id), class:"btn" %>
+        <%= link_to "#{current_user.name}さんのマイページ", user_path(current_user.id), class:"btn" %>
         <%= link_to '利用者一覧', users_path, class:"btn" %>
         <%= link_to 'グループ一覧', groups_path, class:"btn" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :DELETE, class:"btn" %>

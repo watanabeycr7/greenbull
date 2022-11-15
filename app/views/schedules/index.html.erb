@@ -1,15 +1,10 @@
 <%= javascript_pack_tag "index" %>
-<div class="main_top">
-  <% if user_signed_in? %>
-    <p class="welcome_message">ようこそ、<%= @user.name %>さん</p>
-  <% end %>
 
   <%# 2022/11/15 トップページから予定追加が可能であるため、newアクションへのリンクは表示しない。  %>
   <% if false %>
     <p><%= link_to '予定追加', new_schedule_path, class:"btn" %></p>
   <% end %>
 
-</div>
 <div class="schedules-wrapper">
   <div class="add_schedule">
     <p>予定を追加</p>

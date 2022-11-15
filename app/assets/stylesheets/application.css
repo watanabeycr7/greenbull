@@ -150,14 +150,6 @@ form {
 /* 利用者一覧・グループ一覧・マイページ ここまで */
 
 /* トップページ */
-.main_top {
-  display: flex;
-  align-items: center;
-}
-
-.welcome_message {
-  margin: 0 20px;
-}
 
 .schedules-wrapper {
   padding: 50px;
