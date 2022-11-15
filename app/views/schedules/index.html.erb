@@ -1,26 +1,56 @@
 <%= javascript_pack_tag "index" %>
-<div class="main_top">
-  <% if user_signed_in? %>
-    <p class="welcome_message">ようこそ、<%= @user.name %>さん</p>
-  <% end %>
-  <p><%= link_to '予定追加', new_schedule_path, class:"btn" %></p>
-</div>
-<div class="schedules-wrapper">
-  <p>予定一覧</p>
-<% if false %>
-  <% @groups.each do |g| %>
-    <p><%= link_to g.name, group_path(g.id) %></p>
-    <p>
-      <% g.schedules.each do |s| %>
-        <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start %>~<%= s.end %></p>
-      <% end %>
-    </p>
+
+  <%# 2022/11/15 トップページから予定追加が可能であるため、newアクションへのリンクは表示しない。  %>
+  <% if false %>
+    <p><%= link_to '予定追加', new_schedule_path, class:"btn" %></p>
   <% end %>
 
-  <p>その他の予定</p>
-  <% @schedules_not_in_group.each do |s| %>
-    <p><%= link_to s.name, schedule_path(s.id) %>/<%= s.start %>~<%= s.end %></p>
+<div class="schedules-wrapper">
+  <div class="add_schedule">
+    <p>予定を追加</p>
+    <%= form_with model:@new_schedule, url: schedules_path, local: true do |f| %>
+    <div class="schedule">
+      <%= f.label '予定名' %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div class="start">
+      <%= f.label '開始日時' %>
+      <%= f.datetime_local_field :start %>
+    </div>
+    <div class="end">
+      <%= f.label '終了日時' %>
+      <%= f.datetime_local_field :end %>
+    </div>
+    <div class="place">
+      <%= f.label '場所' %>
+      <%= f.text_field :place %>
+    </div>
+    <div class="description">
+      <%= f.label 'メモ' %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.fields_for :user_schedules do |u| %>
+        <div class="editors">
+          <%= f.label '参加管理者' %>
+          <%= u.collection_check_boxes :user_ids, @editors, :id, :name%>
+        </div>
+        <div class="ordinaly_users">
+          <%= f.label '参加利用者' %>
+          <%= u.collection_check_boxes :user_ids, @ordinaly_users, :id, :name%>
+        </div>
+      <% end %>
+    </div>
+    <div class="group">
+      <%= f.fields_for :group_schedules do |g| %>
+        <%= f.label 'グループ' %>
+        <%= g.collection_check_boxes :group_ids, Group.all, :id, :name %>
+      <% end %>
+    </div>
+    <div class="btns">
+      <%= f.submit '登録', class:"submit" %>
+    </div>
   <% end %>
-<% end %>
+  </div>
   <div id="calendar"></div>
 </div>

@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
-  before_action :set_users, only: [:new, :edit]
+  before_action :set_new_schedule, only: [:index, :new]
+  before_action :set_users, only: [:index, :new, :edit]
   # before_action :set_groups, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +18,7 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    @schedule = Schedule.new
+    redirect_to root_path
   end
 
   def create
@@ -79,6 +80,11 @@ class SchedulesController < ApplicationController
 
   def set_schedule
     @schedule = Schedule.find(params[:id])
+  end
+
+  def set_new_schedule
+    # 新規登録用に仮のインスタンスを作成
+    @new_schedule = Schedule.new
   end
 
   def set_users

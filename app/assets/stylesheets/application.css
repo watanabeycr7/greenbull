@@ -52,13 +52,15 @@ header .logo {
   text-decoration: none;
 }
 
+.main-wrapper {
+  width: 85%;
+  margin: 0 auto;
+  background-color: white;
+}
+
 /* 全ページ共通の装飾 ここまで */
 
 /* ログイン画面 ユーザー情報編集*/
-
-.wrapper {
-  text-align: center;
-}
 
 form {
   width: 400px;
@@ -108,11 +110,6 @@ form {
 
 /* 利用者一覧・グループ一覧・マイページ グループ情報 */
 
-.main-wrapper {
-  width: 85%;
-  margin: 0 auto;
-  background-color: white;
-}
 
 .page-title {
   width: auto;
@@ -153,11 +150,24 @@ form {
 /* 利用者一覧・グループ一覧・マイページ ここまで */
 
 /* トップページ */
-.main_top {
+
+.schedules-wrapper {
+  padding: 50px;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
 }
 
-.welcome_message {
-  margin: 0 20px;
+.add_schedule {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+}
+
+.add_schedule p {
+  text-align: center;
+}
+
+#calendar {
+  background-color: white;
+  width: 1200px;
 }
