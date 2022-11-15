@@ -171,6 +171,10 @@ form {
   height: 500px;
 }
 
+.add_schedule p {
+  text-align: center;
+}
+
 #calendar {
   background-color: white;
   width: 1200px;
