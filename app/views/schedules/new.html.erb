@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <%= form_with model:@schedule, url: schedules_path, local: true do |f| %>
+  <%= form_with model:@new_schedule, url: schedules_path, local: true do |f| %>
     <div class="schedule">
       <%= f.label '予定名' %>
       <%= f.text_field :name, autofocus: true %>

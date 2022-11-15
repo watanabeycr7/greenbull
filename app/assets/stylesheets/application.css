@@ -159,6 +159,19 @@ form {
   margin: 0 20px;
 }
 
+.schedules-wrapper {
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.add_schedule {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+}
+
 #calendar {
   background-color: white;
+  width: 1200px;
 }
